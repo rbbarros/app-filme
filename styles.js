@@ -2,33 +2,44 @@ import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#000',
-    justify: 'center',
+    flexGrow: 1,
+    backgroundColor: '#121212', // Fundo escuro elegante (Dark Theme)
+    justifyContent: 'center',
     padding: 20,
-    paddingTop: 100,
+    paddingTop: 50,
+  },
+  card: {
+    backgroundColor: '#1e1e1e', // Card escuro para destacar do fundo
+    borderRadius: 12,
+    borderWidth: 1,
+    borderColor: '#333333', // Borda sutil e elegante
+    elevation: 5, // Sombra no Android
   },
   titulo: {
-    color: '#fff',
+    color: '#f5c518', // Cor dourada (estilo Cinema / O Senhor dos Anéis)
     fontSize: 24,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 15,
+    marginVertical: 15,
   },
   descricao: {
-    color: '#fff',
+    color: '#e0e0e0', // Texto claro legível sobre o fundo escuro
     fontStyle: 'italic',
-    textAlign: 'center',
+    textAlign: 'justify', // Texto alinhado e elegante
     marginBottom: 20,
+    lineHeight: 22, // Espaçamento entre linhas para melhor leitura
   },
-  info: {
-    gap: 10,
+  infoContainer: {
+    gap: 12,
+    marginTop: 10,
   },
   texto: {
-    color: '#fff',
+    color: '#cccccc',
+    fontSize: 14,
+    lineHeight: 20,
   },
   negrito: {
-    color: '#fff',
+    color: '#ffffff',
     fontWeight: 'bold',
   },
 });
