@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity } from 'react-native';
+import { View, FlatList, Image } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useIsFocused } from '@react-navigation/native';
+import { Button, Card, Text } from 'react-native-paper';
 import styles from '../styles/theme';
 
 export default function SavedScreen() {
@@ -40,18 +41,25 @@ export default function SavedScreen() {
           data={salvos}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <View style={styles.card}>
-              <Image source={item.imagem} style={styles.imagem} />
-              <View style={styles.infoContainer}>
-                <Text style={styles.nome}>{item.name}</Text>
-                <Text style={styles.descricao}>Raça: {item.race}</Text>
-                <Text style={styles.ator}>Reino: {item.realm}</Text>
-                
-                <TouchableOpacity style={styles.deleteButton} onPress={() => removerPersonagem(item.id)}>
-                  <Text style={styles.buttonText}>Remover</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
+            <Card style={styles.card}>
+              <Card.Content style={styles.cardContent}>
+                <Image source={item.imagem} style={styles.imagem} />
+                <View style={styles.infoContainer}>
+                  <Text style={styles.nome}>{item.name}</Text>
+                  <Text style={styles.descricao}>Raça: {item.race}</Text>
+                  <Text style={styles.ator}>Reino: {item.realm}</Text>
+
+                  <Button
+                    mode="contained"
+                    buttonColor="#DC2626"
+                    style={styles.deleteButton}
+                    onPress={() => removerPersonagem(item.id)}
+                  >
+                    Remover
+                  </Button>
+                </View>
+              </Card.Content>
+            </Card>
           )}
         />
       )}

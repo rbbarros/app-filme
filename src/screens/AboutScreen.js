@@ -1,16 +1,17 @@
 import React from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import { View, ScrollView, Image } from 'react-native';
+import { Button, Card, Text } from 'react-native-paper';
 import styles from '../styles/theme';
 
 export default function AboutScreen({ navigation }) {
   return (
     <ScrollView contentContainerStyle={styles.container}>
-      <View style={styles.movieCard}>
+      <Card style={styles.movieCard}>
         <Image 
           source={{ uri: "https://www.opovo.com.br/_midias/jpg/2021/09/09/818x460/1_senhor_dos_aneis-17015105.jpg" }} 
           style={styles.cover}
         />
-        <View style={styles.movieContent}>
+        <Card.Content style={styles.movieContent}>
           <Text style={styles.titulo}>O Senhor dos Anéis</Text>
           
           <Text style={[styles.texto, { marginBottom: 16, fontStyle: 'italic' }]}>
@@ -38,15 +39,18 @@ export default function AboutScreen({ navigation }) {
             <Text style={styles.negrito}>Filmes:</Text> A Sociedade do Anel,
             As Duas Torres e O Retorno do Rei
           </Text>
-        </View>
-      </View>
+        </Card.Content>
+      </Card>
 
-      <TouchableOpacity 
+      <Button
+        mode="contained"
+        buttonColor="#F59E0B"
+        textColor="#111320"
         style={styles.navButton} 
         onPress={() => navigation.navigate('Home')}
       >
-        <Text style={styles.navButtonText}>Ver Personagens (API)</Text>
-      </TouchableOpacity>
+        Ver Personagens (API)
+      </Button>
     </ScrollView>
   );
 }

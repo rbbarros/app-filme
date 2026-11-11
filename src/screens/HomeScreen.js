@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, FlatList, Image, TouchableOpacity, Alert, ActivityIndicator } from 'react-native';
+import { View, FlatList, Image, Alert } from 'react-native';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { ActivityIndicator, Button, Card, Text } from 'react-native-paper';
 import { fetchCharacters } from '../api/api';
 import styles from '../styles/theme';
 
@@ -51,18 +52,25 @@ export default function HomeScreen({ navigation }) {
           data={personagens}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
-            <View style={styles.card}>
-              <Image source={item.imagem} style={styles.imagem} />
-              <View style={styles.infoContainer}>
-                <Text style={styles.nome}>{item.name}</Text>
-                <Text style={styles.descricao}>Raça: {item.race}</Text>
-                <Text style={styles.ator}>Reino: {item.realm}</Text>
-                
-                <TouchableOpacity style={styles.saveButton} onPress={() => salvarPersonagem(item)}>
-                  <Text style={styles.buttonText}>Salvar</Text>
-                </TouchableOpacity>
-              </View>
-            </View>
+            <Card style={styles.card}>
+              <Card.Content style={styles.cardContent}>
+                <Image source={item.imagem} style={styles.imagem} />
+                <View style={styles.infoContainer}>
+                  <Text style={styles.nome}>{item.name}</Text>
+                  <Text style={styles.descricao}>Raça: {item.race}</Text>
+                  <Text style={styles.ator}>Reino: {item.realm}</Text>
+
+                  <Button
+                    mode="contained"
+                    buttonColor="#059669"
+                    style={styles.saveButton}
+                    onPress={() => salvarPersonagem(item)}
+                  >
+                    Salvar
+                  </Button>
+                </View>
+              </Card.Content>
+            </Card>
           )}
         />
       )}

@@ -20,11 +20,13 @@ const styles = StyleSheet.create({
     borderRadius: 12,
     borderWidth: 1,
     borderColor: '#374151',
-    padding: 12,
     marginBottom: 12,
+    width: '100%',
+  },
+  cardContent: {
     flexDirection: 'row',
     alignItems: 'center',
-    width: '100%',
+    padding: 12,
   },
   imagem: {
     width: 70,
@@ -52,36 +54,14 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 2,
   },
-  buttonText: {
-    color: '#fff',
-    fontWeight: 'bold',
-    textAlign: 'center'
-  },
   saveButton: {
-    backgroundColor: '#059669',
-    padding: 8,
-    borderRadius: 6,
-    alignItems: 'center',
     marginTop: 8,
   },
   deleteButton: {
-    backgroundColor: '#DC2626',
-    padding: 8,
-    borderRadius: 6,
-    alignItems: 'center',
     marginTop: 8,
   },
   navButton: {
-    backgroundColor: '#F59E0B',
-    padding: 12,
-    borderRadius: 8,
-    alignItems: 'center',
     marginBottom: 16,
-  },
-  navButtonText: {
-    color: '#111320',
-    fontWeight: 'bold',
-    fontSize: 16,
   },
   centerMessage: {
     color: '#D1D5DB',
